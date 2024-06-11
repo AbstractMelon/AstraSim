@@ -4,7 +4,8 @@
   "description": "A space bridge simulator!",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"cd ./src/client && npm run dev\" \"cd ./src/server && npm run dev\""
+    "dev": "concurrently \"cd ./src/client && npm run dev\" \"cd ./src/server && npm run dev\"",
+    "install": "concurrently \"cd ./src/client && npm install\" \"cd ./src/server && npm install\""
   },
   "keywords": [],
   "author": "",
