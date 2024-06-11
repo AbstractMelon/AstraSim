@@ -28,6 +28,9 @@ npm run dev
 We welcome contributions from the community! If you'd like to contribute to AstraSim, please follow these steps:
 
 1. **Fork** the repository.
+    ```bash
+    git clone https://github.com/AbstractMelon/AstraSim.git
+    ```
 2. Create a new branch for your feature or bug fix: 
     ```bash
     git checkout -b feature/my-feature
