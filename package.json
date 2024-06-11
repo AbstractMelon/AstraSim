@@ -1,0 +1,17 @@
+{
+  "name": "astrasim",
+  "version": "1.0.0",
+  "description": "A space bridge simulator!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd ./src/client && npm run dev\" \"cd ./src/server && npm run dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "express": "^4.19.2",
+    "prettier": "^3.3.1"
+  }
+}
