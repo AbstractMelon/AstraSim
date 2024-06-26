@@ -1,8 +1,10 @@
 import React, { createContext, useState, ReactNode } from 'react';
+import { GetServerSideProps } from 'next';
+
 
 type App = {
   name: string;
-  content: string;
+  content: ReactNode;
 };
 
 type AppContextType = {
@@ -17,10 +19,11 @@ type AppProviderProps = {
 };
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  const [apps, setApps] = useState<App[]>([
-    { name: 'App 1', content: 'Content of App 1' },
-    { name: 'App 2', content: 'Content of App 2' },
-  ]);
+
+  const loadedApps: App[] = []
+
+
+  const [apps, setApps] = useState<App[]>(loadedApps);
 
   return (
     <AppContext.Provider value={{ apps, setApps }}>
@@ -30,3 +33,6 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 };
 
 export default AppProvider;
+
+
+

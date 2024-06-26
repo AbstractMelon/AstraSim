@@ -3,6 +3,7 @@ import AppWindow from './AppWindow';
 import { AppContext } from '../context/AppContext';
 import styles from '../styles/Desktop.module.css';
 
+
 const Desktop: React.FC = () => {
   const { apps } = useContext(AppContext);
 

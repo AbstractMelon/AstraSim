@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import DraggableBox from './DraggableBox';
 import styles from '../styles/AppWindow.module.css';
 
 type AppWindowProps = {
   app: {
     name: string;
-    content: string;
+    content: ReactNode;
   };
 };
+
 
 const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
   return (
