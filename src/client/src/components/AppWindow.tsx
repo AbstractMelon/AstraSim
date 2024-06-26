@@ -11,7 +11,6 @@ type AppWindowProps = {
 };
 
 const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
-  const headerRef = useRef<HTMLDivElement>(null);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -23,17 +22,13 @@ const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
     setIsFullscreen(!isFullscreen);
   };
 
-    const handleClose = () => {
-    };
+  const handleClose = () => {
+  };
 
   return (
-    <DraggableBox onMouseDown={(e) => {
-      if (headerRef.current && headerRef.current.contains(e.target as Node)) {
-        e.stopPropagation();
-      }
-    }}>
+    <DraggableBox onHeaderMouseDown={(e) => {}}>
       <div className={`${styles.window} ${isFullscreen ? styles.fullscreen : ''}`}>
-        <div ref={headerRef} className={styles.boxHeader}>
+        <div className={styles.boxHeader} data-header>
           <h2>{app.name}</h2>
           <div className={styles.windowControls}>
             <FaMinus onClick={handleMinimize} />
