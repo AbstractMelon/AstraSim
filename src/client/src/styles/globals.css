@@ -5,9 +5,8 @@ body, html {
     width: 100%;
     font-family: Arial, sans-serif;
     background-image: url('/background.png');
-    background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size:cover;
     color: #ffffff;
   }
   
