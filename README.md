@@ -16,7 +16,7 @@ git clone https://github.com/AbstractMelon/AstraSim.git
 2. Install dependencies:
 ```bash
 cd AstraSim
-npm run install
+npm install
 ```
 3. Start it!
 ```bash
