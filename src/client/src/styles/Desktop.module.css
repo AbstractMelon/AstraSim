@@ -1,10 +1,11 @@
 .desktop {
     position: relative;
-    width: 100%;
-    height: calc(100% - 40px); 
+    width: 100vw;
+    height: calc(100vh - 40px); 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    
   }
   
