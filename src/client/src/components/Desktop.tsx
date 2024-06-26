@@ -8,7 +8,7 @@ const Desktop: React.FC = () => {
 
   return (
     <div className={styles.desktop}>
-      {apps.map((app: { name: string; content: string; }, index: React.Key | null | undefined) => (
+      {apps.map((app, index) => (
         <AppWindow key={index} app={app} />
       ))}
     </div>

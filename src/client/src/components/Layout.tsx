@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
+import Footer from './Footer';
+import Taskbar from './Taskbar';
 
 type LayoutProps = {
   children: ReactNode;
@@ -14,6 +16,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Head>
       <div className="layout">
         {children}
+        <Taskbar />
+        <Footer />
       </div>
     </>
   );
