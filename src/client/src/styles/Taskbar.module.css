@@ -25,3 +25,21 @@
     background-color: #555;
   }
   
+  .appIcons {
+    display: flex;
+    margin: auto;
+  }
+  
+  .appIcon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .appSearch {
+    padding: 5px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin: auto;
+  }
+  
