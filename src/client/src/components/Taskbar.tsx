@@ -13,13 +13,12 @@ const Taskbar: React.FC = () => {
     const newApp = { name: 'New App', content: 'New content here' };
     setApps([...apps, newApp]);
     console.log("App openened!")
-    alert("App here")
   };
 
   return (
     <div className={styles.taskbar}>
       <div className={styles.startButton} onClick={openApp}>
-        <RiGridFill /> Start
+        <RiGridFill /> Start app
       </div>
       {/*
       <button className={styles.changeTimeButton} onClick={openApp}>
