@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"cd ./src/client && npm run dev\" \"cd ./src/server && npm run dev\"",
-    "install": "npm i && concurrently \"cd ./src/client && npm install\" \"cd ./src/server && npm install\""
+    "install": "concurrently \"cd ./src/client && npm install\" \"cd ./src/server && npm install\""
   },
   "keywords": [],
   "author": "",
