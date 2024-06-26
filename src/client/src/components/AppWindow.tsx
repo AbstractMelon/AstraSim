@@ -1,16 +1,18 @@
-import React, { ReactNode, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import DraggableBox from './DraggableBox';
 import styles from '../styles/AppWindow.module.css';
 import { FaTimes, FaMinus, FaExpand } from 'react-icons/fa';
+import { AppContext } from '../context/AppContext';
 
 type AppWindowProps = {
   app: {
     name: string;
-    content: ReactNode;
+    content: React.ReactNode;
   };
 };
 
 const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
+  const { apps, setApps } = useContext(AppContext);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -23,6 +25,7 @@ const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
   };
 
   const handleClose = () => {
+    setApps(prevApps => prevApps.filter(a => a !== app));
   };
 
   return (
