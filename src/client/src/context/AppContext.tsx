@@ -10,7 +10,7 @@ type AppContextType = {
   setApps: React.Dispatch<React.SetStateAction<App[]>>;
 };
 
-export const AppContext = createContext<AppContextType | undefined>(undefined);
+export const AppContext = createContext<AppContextType>({} as AppContextType);
 
 type AppProviderProps = {
   children: ReactNode;
