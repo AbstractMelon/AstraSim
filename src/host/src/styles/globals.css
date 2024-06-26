@@ -1,0 +1,5 @@
+html,  body {
+    overflow: hidden;
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+}
