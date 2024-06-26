@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/Footer.module.css';
 import {AppInfoType} from '../AppAPI';
 
+import icon from './icon.png';
+
 export const AppInfo: AppInfoType = {
   name: 'Clock',
+  icon: icon
 } 
 
 const Clock: React.FC = () => {
