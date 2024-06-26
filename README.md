@@ -1,6 +1,6 @@
 # AstraSim
 
-AstraSim is a space bridge simulator that allows players to experience the thrill of commanding a spacecraft and navigating through the vastness of space. Whether you're a seasoned captain or a novice explorer, AstraSim offers an immersive experience that will challenge your skills and push you to the limits.
+AstraSim is a space bridge simulator that allows players the experience of commanding a spacecraft and navigating through space.
 
 ## Features
 
