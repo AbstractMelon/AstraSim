@@ -1,0 +1,9 @@
+.draggableBox {
+    position: absolute;
+    cursor: grab;
+  }
+  
+  .dragging {
+    cursor: grabbing;
+  }
+  
