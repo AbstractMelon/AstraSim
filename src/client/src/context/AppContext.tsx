@@ -1,6 +1,7 @@
 import React, { createContext, useState, ReactNode } from 'react';
 import { GetServerSideProps } from 'next';
 
+import * as fs from 'fs'
 
 type App = {
   name: string;
@@ -14,19 +15,30 @@ type AppContextType = {
 
 export const AppContext = createContext<AppContextType>({} as AppContextType);
 
-type AppProviderProps = {
-  children: ReactNode;
+export const getServerSideProps: GetServerSideProps = async () => {
+  const apps: App[] = [
+    {name: 'App 1', content: 'Content for App 1'},
+  ];
+  //this never gets called for some reason akjsdasdas
+  //maybe the prop isnt actually getting passed
+  console.log("Hello")
+
+  return { props: { apps } };
 };
 
-const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+type AppProviderProps = {
+  children: ReactNode;
+  apps: App[];
+};
 
-  const loadedApps: App[] = []
+const AppProvider: React.FC<AppProviderProps> = ({ children, apps }) => {
 
 
-  const [apps, setApps] = useState<App[]>(loadedApps);
+  const [appsLoaded, setApps] = useState<App[]>(apps);
+  console.log(apps)
 
   return (
-    <AppContext.Provider value={{ apps, setApps }}>
+    <AppContext.Provider value={{ apps: appsLoaded, setApps }}>
       {children}
     </AppContext.Provider>
   );
