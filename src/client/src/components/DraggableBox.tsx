@@ -4,29 +4,24 @@ import styles from '../styles/DraggableBox.module.css';
 
 type DraggableBoxProps = {
   children: ReactNode;
+  onMouseDown: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
 
-const DraggableBox: React.FC<DraggableBoxProps> = ({ children }) => {
+const DraggableBox: React.FC<DraggableBoxProps> = ({ children, onMouseDown }) => {
   const { position, dragStart, dragging, dragEnd } = useDraggable();
-  const boxHeaderRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (boxHeaderRef.current && boxHeaderRef.current.contains(e.target as Node)) {
-      dragStart(e);
-    }
-  };
 
   return (
     <div
       className={`${styles.draggableBox} ${dragging ? styles.dragging : ''}`}
       style={{ left: position.x, top: position.y }}
-      onMouseDown={handleMouseDown}
+      onMouseDown={dragStart}
       onMouseUp={dragEnd}
     >
-      {children}
+      <div onMouseDown={onMouseDown}>
+        {children}
+      </div>
     </div>
   );
 };
 
 export default DraggableBox;
-    

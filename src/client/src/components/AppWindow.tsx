@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
 import DraggableBox from './DraggableBox';
 import styles from '../styles/AppWindow.module.css';
 import { FaTimes, FaMinus, FaExpand } from 'react-icons/fa';
@@ -11,6 +11,7 @@ type AppWindowProps = {
 };
 
 const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
+  const headerRef = useRef<HTMLDivElement>(null);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -22,13 +23,17 @@ const AppWindow: React.FC<AppWindowProps> = ({ app }) => {
     setIsFullscreen(!isFullscreen);
   };
 
-  const handleClose = () => {
-  };
+    const handleClose = () => {
+    };
 
   return (
-    <DraggableBox>
+    <DraggableBox onMouseDown={(e) => {
+      if (headerRef.current && headerRef.current.contains(e.target as Node)) {
+        e.stopPropagation();
+      }
+    }}>
       <div className={`${styles.window} ${isFullscreen ? styles.fullscreen : ''}`}>
-        <div className={styles.boxHeader} onMouseDown={e => e.stopPropagation()}>
+        <div ref={headerRef} className={styles.boxHeader}>
           <h2>{app.name}</h2>
           <div className={styles.windowControls}>
             <FaMinus onClick={handleMinimize} />
