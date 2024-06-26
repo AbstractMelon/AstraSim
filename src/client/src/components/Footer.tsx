@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/Footer.module.css';
 
 const Footer: React.FC = () => {
-  const [time, setTime] = useState<string>(new Date().toLocaleTimeString());
+  const [time, setTime] = useState<string>('');
 
   useEffect(() => {
     const timer = setInterval(() => {
