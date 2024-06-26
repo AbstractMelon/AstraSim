@@ -11,6 +11,13 @@ const Desktop: React.FC = () => {
       {/* {apps.map((app, index) => (
         <AppWindow key={index} app={app} />
       ))} */}
+      {apps.map((app, index) => (
+        <AppWindow key={index} app={app} />
+      ))} 
+      <AppWindow app={{
+              name: 'Test',
+              content: 'Hello world!'
+          }} />
     </div>
   );
 };
