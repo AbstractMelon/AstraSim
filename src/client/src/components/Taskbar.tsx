@@ -1,18 +1,20 @@
 import React, { useContext } from 'react';
 import styles from '../styles/Taskbar.module.css';
 import { AppContext } from '../context/AppContext';
-import { RiGridFill } from 'react-icons/ri'; 
-import App from 'next/app';
-import { allowedNodeEnvironmentFlags } from 'process';
+import { RiGridFill } from 'react-icons/ri';
 
 const Taskbar: React.FC = () => {
   const { apps, setApps } = useContext(AppContext);
 
   const openApp = () => {
-    console.log("Opening app: " + App)
-    const newApp = { name: 'New App', content: 'New content here' };
+    const appName = window.prompt('Enter the app name:', 'New App');
+    if (!appName) return; 
+
+    const appContent = window.prompt('Enter the app content:', 'New content here');
+    if (!appContent) return; 
+
+    const newApp = { name: appName, content: appContent };
     setApps([...apps, newApp]);
-    console.log("App openened!")
   };
 
   return (
@@ -20,11 +22,6 @@ const Taskbar: React.FC = () => {
       <div className={styles.startButton} onClick={openApp}>
         <RiGridFill /> Start app
       </div>
-      {/*
-      <button className={styles.changeTimeButton} onClick={openApp}>
-        <RiGridFill /> Open App
-      </button>
-      */}
     </div>
   );
 };
